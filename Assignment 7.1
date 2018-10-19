@@ -1,3 +1,24 @@
 Histogram for all variables in a dataset mtcars. Write a program to create histograms for all columns.
+
+library(ggplot2)
+install.packages("tidyr")
+library("tidyr")
+library(purrr)
+data(mtcars)
+mtcars %>%
+keep(is.numeric) %>%
+gather() %>%
+ggplot(aes(value)) +
+facet_wrap(~ key, scales = "free") +
+geom_histogram()
+
+Plot attached separately as Assignment 7.1_Histogram_question1.jpg
+
+
 2. Check the probability distribution of all variables in mtcars
+
+
 3. Write a program to create boxplot for all variables.
+boxplot(mtcars)
+
+Plot attached separately as Assignment 7.1_boxplot_question3. Please refer.
